@@ -1,0 +1,65 @@
+# FLEx
+
+## Setup
+
+Clone the repo, submodules and install the required packages.
+
+```
+git clone https://github.com/lFelixC/FLEx.git
+cd FLEx
+conda create -n fedllm python=3.10
+conda activate fedllm
+pip install -r requirements.txt
+source setup.sh
+```
+
+### Federated Instruction Tuning
+
+The training script is in `training_scripts/run_sft_fedavg_random_experts.sh`.
+
+```
+CUDA_VISIBLE_DEVICES=$gpu python main_sft.py \
+ --learning_rate $lr \
+ --model_name_or_path $model_name_or_path \
+ --dataset_name $dataset_name \
+ --local_data_dir $local_data_dir \
+ --dataset_sample $dataset_sample \
+ --fed_alg $fed_alg \
+ --num_clients $num_clients \
+ --sample_clients $sample_clients \
+ --max_steps $max_steps \
+ --num_rounds $num_rounds \
+ --batch_size $batch_size \
+ --gradient_accumulation_steps $gradient_accumulation_steps \
+ --seq_length $seq_length \
+ --peft_lora_r $lora_r \
+ --peft_lora_alpha $lora_alpha \
+ --use_peft \
+ --output_dir $output_dir \
+ --template "alpaca" \
+ --split_strategy $split_strategy \
+ --category_list "${category_list[@]}" \
+ --target_modules "${target_modules[@]}" \
+ --add_side_experts $add_side_experts \
+ --trust_remote_code $trust_remote_code \
+ --personalized $personalized \
+ --random_select_experts $random_select_experts
+```
+
+Key arguments:
+
+- `add_side_experts`: Use pruning experts
+- `personalized`: Use personalized experts
+- `category_list`: Your dataset tasks
+- `target_modules`: LoRA target_modules
+- `random_select_experts`: Random select experts and add lora with them.
+
+This project based on :
+
+**OpenFedLLM: Training Large Language Models on Decentralized Private Data via Federated Learning**
+*Authors*: Rui Ye, Wenhao Wang, Jingyi Chai, Dihan Li, Zexi Li, Yinda Xu, Yaxin Du, Yanfeng Wang, Siheng Chen
+*Conference*: Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD '24)
+*Year*: 2024
+*Pages*: 6137--6147
+
+
