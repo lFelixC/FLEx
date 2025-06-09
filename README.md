@@ -57,9 +57,23 @@ Key arguments:
 This project based on :
 
 **OpenFedLLM: Training Large Language Models on Decentralized Private Data via Federated Learning**
+
 *Authors*: Rui Ye, Wenhao Wang, Jingyi Chai, Dihan Li, Zexi Li, Yinda Xu, Yaxin Du, Yanfeng Wang, Siheng Chen
+
 *Conference*: Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (KDD '24)
+
 *Year*: 2024
-*Pages*: 6137--6147
+
+*Pages*: 6137-6147
+
+**Not All Experts are Equal: Efficient Expert Pruning and Skipping for Mixture-of-Experts Large Language Models** 
+
+*Authors*: Xudong Lu and Qi Liu and Yuhui Xu and Aojun Zhou and Siyuan Huang and Bo Zhang and Junchi Yan and Hongsheng Li
+
+*Conference*: In Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics
+
+*Year*: 2024 
+
+*Pages*: 6159-6172
 
 
